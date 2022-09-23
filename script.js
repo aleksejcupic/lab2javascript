@@ -1,31 +1,17 @@
-// TODO: load the dataset 
-let attractions;
+// script.js for lab 2 javascript - Aleksej Cupic
 fetch('/attractions.json')
 	.then(response => response.json())
 	.then(data => {
-		attractions = data;
-		console.log('attractions - (a)', attractions)
+	 	attractions = data.sort();
+		filterData("all");
 	});
 
-console.log('attractions - (b)', attractions);
-
 function filterData(category) {
-
-	/* **************************************************
-	 *
-	 * TODO: filter attractions by the selected category
-	 * TODO: filter top 5 attractions
-	 *
-	 * CALL THE FOLLOWING FUNCTION TO RENDER THE BAR-CHART:
-	 *
-	 * renderBarChart(data)
-	 *
-	 * - 'data' must be an array of JSON objects
-	 * - the max. length of 'data' is 5
-	 *
-	 * **************************************************/
-
+	var data = attractions
+		.filter(attraction => category == "all" ? true : attraction.Category == category)
+		.slice(0, 5);
+	renderBarChart(data);
 }
 
-// TODO: Define an event listener for the dropdown menu
-//       Call filterData with the selected category
+document.querySelector('#attraction-category').addEventListener('change',
+	event => filterData(event.target.value));
