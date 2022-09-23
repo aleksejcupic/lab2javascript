@@ -31,7 +31,7 @@ body {
     display: inline-block;
     background: transparent;
     max-width: 200px;
-    border: 1px solid #75D4CA;
+    border: 1px solid #ab75d4;
     outline: none;
   }
   
@@ -47,11 +47,13 @@ body {
   /****************/
   
   .bar {
-    fill: #3C948B;
+    stroke: black;
+    stroke-width: 2px;
+    fill: #8d60c3;
   }
   
   .bar:hover {
-    fill: #327972;
+    fill: #704c82;
   }
   
   .axis {
@@ -76,7 +78,7 @@ body {
   
   .axis-title {
       fill: #888;
-      font-size: 12px;
+      font-size: 20px;
   }
   
   
