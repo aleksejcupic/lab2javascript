@@ -132,7 +132,7 @@ function renderBarChart(data) {
   svg
     .append("text")
     .attr("class", "axis-title")
-    .attr("x", 50)
+    .attr("x", -5)
     .attr("y", -15)
     .attr("dy", ".1em")
     .style("text-anchor", "end")
